@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-gitops
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+spec:
+  rules:
+  - host: hello.nxio.kubernetes.us-east-1.nuxeo.internal
+    http:
+      paths:
+      - backend:
+          serviceName: hello-gitops
+          servicePort: 8080
+        pathType: ImplementationSpecific
+status:
+  loadBalancer:
+    ingress:
+    - hostname: internal-ab75d1c70517e4fa2ba698f1cb86251c-1811360456.us-east-1.elb.amazonaws.com
