@@ -8,4 +8,4 @@ namespace: hello-gitops
 images:
 - name: hello-gitops
   newName: dmetzler/hello-gitops
-  newTag: 33299d5fa9a066d15bc29b7e802923772095d59f
+  newTag: 9b67098967b9b01cd98153c861a17bc0fb7025f5
