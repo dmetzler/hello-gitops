@@ -10,8 +10,7 @@ import (
 const PORT = 8080
 
 func main() {
-	startServer(handler)
-	
+	startServer(handler)	
 }
 
 func startServer(handler func(http.ResponseWriter, *http.Request)){
