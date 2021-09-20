@@ -25,7 +25,7 @@ func handler(w http.ResponseWriter, r *http.Request){
 	log.Printf("received request from %s", r.Header.Get("User-Agent"))
 	host, err := os.Hostname()
 	if err != nil {
-		host = "unknown host"
+		host = "unknown host "
 	}
 	resp := fmt.Sprintf("Hello from : %s", host)
 	_, err = w.Write([]byte(resp))
